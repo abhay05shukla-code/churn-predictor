@@ -1,0 +1,12 @@
+pandas==3.0.5
+numpy==2.5.3
+scikit-learn==1.9.1
+joblib==1.6.0
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+pydantic==2.13.5
+streamlit==1.63.0
+plotly==7.0.0
+requests==2.34.2
+httpx==0.28.1
+pytest==9.1.1

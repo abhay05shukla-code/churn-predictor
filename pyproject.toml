@@ -1,0 +1,11 @@
+[project]
+name = "churn-predictor"
+version = "1.0.0"
+description = "Customer churn predictor: scikit-learn model, FastAPI backend, Streamlit retention dashboard"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

@@ -1,0 +1,209 @@
+{
+  "trained_at": "2026-09-13T00:49:31+00:00",
+  "training_seconds": 20.5,
+  "dataset": {
+    "path": "/Users/abhayshukla/churn-predictor/data/telco_churn.csv",
+    "rows": 7043,
+    "churn_rate": 0.2654,
+    "train_rows": 5634,
+    "holdout_rows": 1409
+  },
+  "best_model": "logistic_regression",
+  "threshold": 0.3271,
+  "holdout": {
+    "accuracy": 0.7615,
+    "precision": 0.5378,
+    "recall": 0.7219,
+    "f1": 0.6164,
+    "roc_auc": 0.8421
+  },
+  "confusion_matrix": {
+    "labels": [
+      "stayed",
+      "churned"
+    ],
+    "matrix": [
+      [
+        803,
+        232
+      ],
+      [
+        104,
+        270
+      ]
+    ],
+    "tn": 803,
+    "fp": 232,
+    "fn": 104,
+    "tp": 270
+  },
+  "candidates": {
+    "logistic_regression": {
+      "cv_roc_auc_mean": 0.8461,
+      "cv_roc_auc_std": 0.0125,
+      "holdout_at_0.5": {
+        "accuracy": 0.8027,
+        "precision": 0.6509,
+        "recall": 0.5535,
+        "f1": 0.5983,
+        "roc_auc": 0.8421
+      }
+    },
+    "random_forest": {
+      "cv_roc_auc_mean": 0.8434,
+      "cv_roc_auc_std": 0.009,
+      "holdout_at_0.5": {
+        "accuracy": 0.7999,
+        "precision": 0.6608,
+        "recall": 0.5053,
+        "f1": 0.5727,
+        "roc_auc": 0.8393
+      }
+    },
+    "hist_gradient_boosting": {
+      "cv_roc_auc_mean": 0.8433,
+      "cv_roc_auc_std": 0.0085,
+      "holdout_at_0.5": {
+        "accuracy": 0.7984,
+        "precision": 0.6531,
+        "recall": 0.5134,
+        "f1": 0.5749,
+        "roc_auc": 0.8378
+      }
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "tenure",
+      "importance": 0.16106,
+      "std": 0.00499
+    },
+    {
+      "feature": "Contract",
+      "importance": 0.03367,
+      "std": 0.00399
+    },
+    {
+      "feature": "InternetService",
+      "importance": 0.0237,
+      "std": 0.00627
+    },
+    {
+      "feature": "TotalCharges",
+      "importance": 0.01168,
+      "std": 0.00223
+    },
+    {
+      "feature": "MonthlyCharges",
+      "importance": 0.01099,
+      "std": 0.00311
+    },
+    {
+      "feature": "OnlineSecurity",
+      "importance": 0.00405,
+      "std": 0.00119
+    },
+    {
+      "feature": "TechSupport",
+      "importance": 0.00359,
+      "std": 0.0011
+    },
+    {
+      "feature": "PaymentMethod",
+      "importance": 0.00319,
+      "std": 0.00156
+    },
+    {
+      "feature": "PaperlessBilling",
+      "importance": 0.00279,
+      "std": 0.00158
+    },
+    {
+      "feature": "MultipleLines",
+      "importance": 0.00212,
+      "std": 0.00132
+    },
+    {
+      "feature": "StreamingMovies",
+      "importance": 0.00174,
+      "std": 0.00134
+    },
+    {
+      "feature": "StreamingTV",
+      "importance": 0.00166,
+      "std": 0.00176
+    },
+    {
+      "feature": "OnlineBackup",
+      "importance": 0.00134,
+      "std": 0.00122
+    },
+    {
+      "feature": "SeniorCitizen",
+      "importance": 0.00122,
+      "std": 0.00036
+    },
+    {
+      "feature": "PhoneService",
+      "importance": 0.001,
+      "std": 0.00047
+    },
+    {
+      "feature": "Dependents",
+      "importance": 0.00073,
+      "std": 0.00094
+    },
+    {
+      "feature": "DeviceProtection",
+      "importance": 0.00073,
+      "std": 0.00072
+    },
+    {
+      "feature": "Partner",
+      "importance": 5e-05,
+      "std": 0.00013
+    },
+    {
+      "feature": "gender",
+      "importance": -0.00011,
+      "std": 9e-05
+    }
+  ],
+  "business_impact": {
+    "holdout_customers": 1409,
+    "holdout_churners": 374,
+    "customers_flagged": 502,
+    "flag_rate": 0.3563,
+    "monthly_revenue_of_churners": 27214.9,
+    "monthly_revenue_of_churners_flagged": 20718.0,
+    "revenue_capture_rate": 0.7613,
+    "monthly_revenue_of_all_flagged": 38749.45,
+    "flag_revenue_precision": 0.5347
+  },
+  "features": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "SeniorCitizen",
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "environment": {
+    "python": "3.14.5",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.0.5"
+  }
+}
