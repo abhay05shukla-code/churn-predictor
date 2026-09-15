@@ -46,7 +46,7 @@ Requires **Python 3.12 or newer** (the pinned numpy needs 3.12; stock macOS `pyt
 If `python3` on your PATH is older, run `make setup PYTHON=python3.12`.
 
 ```bash
-git clone <your-repo-url> churn-predictor && cd churn-predictor
+git clone https://github.com/abhay05shukla-code/churn-predictor.git && cd churn-predictor
 make setup        # checks the Python version, then python3 -m venv .venv && pip install -r requirements.txt
 make data         # downloads data/telco_churn.csv (7,043 rows)
 make train        # ~30 s: trains 3 models, writes models/churn_pipeline.joblib + metrics.json
@@ -135,7 +135,7 @@ models/               churn_pipeline.joblib + metrics.json (produced by train.py
 - **Schema tests guard the contract.** A test asserts the API's `Literal` types equal the
   encoder's category lists, and another pushes every dataset row through the schema.
 
-## Caveats (say these out loud in an interview)
+## Limitations
 
 - The retention board scores the same customers the model was trained on, so 80% of
   those scores are in-sample. In production you would score customers the model has
@@ -145,17 +145,3 @@ models/               churn_pipeline.joblib + metrics.json (produced by train.py
   two-year contract causes the reduction.
 - The dataset is a single snapshot with no timestamps, so there is no time-based
   validation and no drift monitoring.
-
-## Resume bullets
-
-> **Machine Learning & API Developer | Customer Retention Dashboard**
-> - Built an end-to-end churn pipeline with Python, pandas and scikit-learn (3 candidate
->   models, 5-fold CV selection, out-of-fold threshold tuning) reaching **0.84 ROC-AUC**
->   on a held-out set of 1,409 telecom customers and catching **72% of churners** at the
->   recall-tuned operating point the service uses (80% accuracy at the default 0.5 cutoff).
-> - Designed a FastAPI service with strict Pydantic validation serving single and batch
->   predictions (7,000 customers scored in one call) with business-ready outputs:
->   risk tier and revenue at risk.
-> - Shipped a Streamlit executive dashboard that ranks accounts by expected revenue
->   loss and simulates retention offers; at the tuned threshold the model flags 36% of
->   customers while capturing **76% of churning monthly revenue**.
